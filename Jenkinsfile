@@ -1,4 +1,3 @@
-```groovy
 pipeline {
     agent any
 
@@ -22,15 +21,6 @@ pipeline {
             }
         }
 
-        stage('Prepare Vercel') {
-            steps {
-                bat '''
-                    if exist .vercel rmdir /s /q .vercel
-                    npx --yes vercel pull --yes --environment=production --token=%VERCEL_TOKEN%
-                '''
-            }
-        }
-
         stage('Deploy to Vercel') {
             steps {
                 bat '''
@@ -49,4 +39,3 @@ pipeline {
         }
     }
 }
-```
