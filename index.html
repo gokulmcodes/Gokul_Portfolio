@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gokul M | Backend Developer</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="page.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <style>
+      .skill-icon-text {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+        border-radius: 6px;
+        background: rgba(127, 127, 127, 0.12);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="particles-js" aria-hidden="true"></div>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-toggle__icon" aria-hidden="true"></span>
+    </button>
+
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+      ^
+    </button>
+
+    <div class="loading-screen" id="loadingScreen" aria-hidden="true">
+      <div class="loading-screen__inner">
+        <p>Loading selected work</p>
+      </div>
+    </div>
+
+    <nav id="desktop-nav">
+      <button class="logo" id="scrollTop" type="button">Gokul M</button>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <nav id="hamburger-nav">
+      <button class="logo" id="logoMobile" type="button">Gokul M</button>
+      <div class="hamburger-menu">
+        <button class="hamburger-icon" type="button" onclick="toggleMenu()" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <section id="profile" class="hero animate-section">
+        <div class="hero__copy">
+          <p class="eyebrow">Software Developer / Cloud / AI Development</p>
+          <h1 class="title">Building practical software with polish, speed, and purpose.</h1>
+          <p class="hero__lede">
+            I'm Gokul M, a developer focused on AI-powered tools, cloud systems, and secure user experiences that solve real business problems.
+          </p>
+          <div class="btn-container">
+            <a class="btn btn-color-1" href="#projects">View Projects</a>
+            <a class="btn btn-color-2" href="#contact">Let's Talk</a>
+          </div>
+          <div id="socials-container">
+            <a href="https://github.com/gokulmcodes" class="social-link" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/gokul-m-77a850341/" class="social-link" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__photo-card glossy-card">
+            <div class="profile__pic-container">
+              <img src="./assets/profile-pic.png" alt="Portrait of Gokul M" />
+            </div>
+            <div class="hero__badge">
+              <span>Now shaping AI, cloud, and product experiences</span>
+            </div>
+          </div>
+          <div class="hero__stats">
+            <article class="stat-card details-container">
+              <p class="stat-card__number">2</p>
+              <h2>Years of hands-on delivery</h2>
+            </article>
+            <article class="stat-card">
+              <p class="stat-card__number">3</p>
+              <h2>Featured product builds</h2>
+            </article>
+            <article class="stat-card">
+              <p class="stat-card__number">4</p>
+              <h2>Cloud and industry certifications</h2>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section-grid animate-section">
+        <div class="section-heading">
+          <p class="section__text__p1">Profile</p>
+          <h2 class="section-title">A builder who likes turning complex ideas into useful products.</h2>
+        </div>
+        <div class="about-layout">
+          <article class="feature-card text-container glossy-card">
+            <p>
+              My work sits at the intersection of application development, AI-assisted workflows, and cloud deployment. I enjoy taking ideas from concept to working product, especially when the solution needs to feel intuitive for real users rather than just technically correct.
+            </p>
+            <p>
+              Recent work includes content summarization, rental recommendation platforms, business intelligence assistants, and systems designed with security and scalability in mind.
+            </p>
+          </article>
+          <aside class="about-panel">
+            <img src="./assets/about-pic.png" alt="Gokul working profile illustration" class="about-panel__image" />
+            <div class="about-panel__meta">
+              <div class="details-container">
+                <span>Education</span>
+                <strong>B.E. Computer Science and Engineering</strong>
+              </div>
+              <div class="details-container">
+                <span>Focus Areas</span>
+                <strong>AI apps, cloud systems, secure product design</strong>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="skills" class="section-grid animate-section">
+        <div class="section-heading">
+          <p class="section__text__p1">Capabilities</p>
+          <h2 class="section-title">A practical stack for shipping modern web and cloud products.</h2>
+        </div>
+        <div class="skill-columns">
+          <article class="skill-panel glossy-card">
+            <h3 class="experience-sub-title">Core Technologies</h3>
+            <div class="article-container">
+              <article class="skill-item">
+                <img src="./assets/html.png" alt="HTML icon" class="icon" />
+                <div>
+                  <h3>HTML</h3>
+                  <p>Semantic structure and responsive layout.</p>
+                </div>
+              </article>
+              <article class="skill-item">
+                <img src="./assets/css.png" alt="CSS icon" class="icon" />
+                <div>
+                  <h3>CSS</h3>
+                  <p>Visual systems, motion, and UI refinement.</p>
+                </div>
+              </article>
+              <article class="skill-item">
+                <img src="./assets/javascript.png" alt="JavaScript icon" class="icon" />
+                <div>
+                  <h3>JavaScript</h3>
+                  <p>Interactive products and client-side behavior.</p>
+                </div>
+              </article>
+              <article class="skill-item">
+                <img src="./assets/python.png" alt="Python icon" class="icon" />
+                <div>
+                  <h3>Python</h3>
+                  <p>Automation, AI workflows, and backend logic.</p>
+                </div>
+              </article>
+              <article class="skill-item">
+                <img src="./assets/mongodb.png" alt="MongoDB icon" class="icon" />
+                <div>
+                  <h3>MongoDB</h3>
+                  <p>Document-based data modeling and storage.</p>
+                </div>
+              </article>
+              <article class="skill-item">
+                <img src="./assets/aws.png" alt="AWS icon" class="icon" />
+                <div>
+                  <h3>AWS</h3>
+                  <p>Cloud hosting, deployment, and operations.</p>
+                </div>
+              </article>
+            </div>
+          </article>
+          <article class="skill-panel glossy-card">
+            <h3 class="experience-sub-title">Workflow and Tools</h3>
+            <div class="article-container">
+              <article class="skill-item">
+                <img src="./assets/git.png" alt="Git icon" class="icon" />
+                <div>
+                  <h3>Git & GitHub</h3>
+                  <p>Version control and collaborative delivery.</p>
+                </div>
+              </article>
+              <article class="skill-item">
+                <img src="./assets/doc.png" alt="Docker icon" class="icon" />
+                <div>
+                  <h3>Docker</h3>
+                  <p>Portable environments and deployment consistency.</p>
+                </div>
+              </article>
+              <article class="skill-item">
+                <img src="./assets/ubuntu.png" alt="Ubuntu icon" class="icon" />
+                <div>
+                  <h3>Ubuntu</h3>
+                  <p>Linux-based development and server workflows.</p>
+                </div>
+              </article>
+              <article class="skill-item">
+                <img src="./assets/vmware.png" alt="VMware icon" class="icon" />
+                <div>
+                  <h3>VMware</h3>
+                  <p>Virtualized environments for testing and setup.</p>
+                </div>
+              </article>
+              <article class="skill-item">
+                <img src="./assets/powerbi.png" alt="Power BI icon" class="icon" />
+                <div>
+                  <h3>Power BI</h3>
+                  <p>Reporting, dashboards, and business insights.</p>
+                </div>
+              </article>
+              <article class="skill-item">
+                <span class="icon skill-icon-text" aria-hidden="true">J</span>
+                <div>
+                  <h3>Jenkins</h3>
+                  <p>Automating build, test, and deployment workflows.</p>
+                </div>
+              </article>
+              <article class="skill-item">
+                <span class="icon skill-icon-text" aria-hidden="true">T</span>
+                <div>
+                  <h3>Terraform</h3>
+                  <p>Infrastructure as Code for repeatable cloud provisioning.</p>
+                </div>
+              </article>
+              <article class="skill-item">
+                <span class="icon skill-icon-text" aria-hidden="true">↻</span>
+                <div>
+                  <h3>CI/CD</h3>
+                  <p>Continuous integration and delivery for reliable releases.</p>
+                </div>
+              </article>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="section-grid animate-section">
+        <div class="section-heading">
+          <p class="section__text__p1">Experience</p>
+          <h2 class="section-title">I've contributed across research, cloud consulting, and product-focused problem solving.</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-card experience-item">
+            <div class="timeline-card__meta">
+              <span>Hue Learn</span>
+              <strong>Research and Development</strong>
+              <p class="timeline-card__years">2024 - 2025</p>
+              <p>Bengaluru / Onsite</p>
+            </div>
+            <ul class="timeline-card__list">
+              <li>Applied research and development methods to shape usable technical solutions.</li>
+              <li>Documented ideas clearly for implementation and future iteration.</li>
+              <li>Worked with databases and product thinking to support experimentation.</li>
+            </ul>
+          </article>
+          <article class="timeline-card experience-item">
+            <div class="timeline-card__meta">
+              <span>MindfulAI</span>
+              <strong>Cloud Consultant</strong>
+              <p class="timeline-card__years">2023 - 2024</p>
+              <p>Coimbatore / Onsite</p>
+            </div>
+            <ul class="timeline-card__list">
+              <li>Supported cloud architecture, deployment, and scalability planning.</li>
+              <li>Focused on performance optimization and secure infrastructure decisions.</li>
+              <li>Strengthened delivery with NSDC and NPTEL-backed learning in cloud systems.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="section-grid animate-section">
+        <div class="section-heading">
+          <p class="section__text__p1">Selected Work</p>
+          <h2 class="section-title">Projects that blend product thinking, engineering, and AI-assisted workflows.</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-image-wrapper">
+              <img src="./assets/project-1.png" alt="AI Content Summarizer preview" class="project-img" />
+            </div>
+            <div class="project-copy">
+              <p class="project-kicker">AI Product</p>
+              <h3 class="project-title">AI Content Summarizer</h3>
+              <p>
+                A summarization experience that turns long-form online content into quick, relevant insights for busy readers.
+              </p>
+              <div class="btn-container">
+                <a class="btn btn-color-2 project-btn" href="https://github.com/gokulm2021/AI-Content-Summarizer" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="btn btn-color-1 project-btn" href="https://article-echo.vercel.app/" target="_blank" rel="noreferrer">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card featured-project">
+            <div class="project-image-wrapper">
+              <img src="./assets/project-2.png" alt="RentFindr preview" class="project-img" />
+            </div>
+            <div class="project-copy">
+              <p class="project-kicker">Full-Stack Platform</p>
+              <h3 class="project-title">RentFindr</h3>
+              <p>
+                A smart rental discovery platform with preference-based filtering and recommendation-driven browsing for faster decision-making.
+              </p>
+              <div class="btn-container">
+                <a class="btn btn-color-2 project-btn" href="https://github.com/gokulm2021/RentFindr-LandBroker" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="btn btn-color-1 project-btn" href="https://rentfindr.onrender.com/" target="_blank" rel="noreferrer">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image-wrapper">
+              <img src="./assets/project-3.png" alt="Business AI Bot preview" class="project-img" />
+            </div>
+            <div class="project-copy">
+              <p class="project-kicker">Business Intelligence</p>
+              <h3 class="project-title">Business AI Bot</h3>
+              <p>
+                An assistant that generates business ideas, market-oriented suggestions, and practical insights for founders and teams.
+              </p>
+              <div class="btn-container">
+                <a class="btn btn-color-2 project-btn" href="https://github.com/gokulmcodes/Business-Assitant-AIBot" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="btn btn-color-1 project-btn" href="https://business-assistant-aibot.vercel.app" target="_blank" rel="noreferrer">Live Demo</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="certifications" class="section-grid animate-section">
+        <div class="section-heading">
+          <p class="section__text__p1">Recognition</p>
+          <h2 class="section-title">Certifications that reinforce my cloud foundation.</h2>
+        </div>
+        <div class="certification-container">
+          <article class="certification-card">
+            <div class="certification-card__inner">
+              <div class="certification-card__face certification-card__front">
+                <button class="certification-card__copy" type="button" aria-expanded="false">
+                  <p>Skill India / NSDC</p>
+                  <h3>Cloud Consultant Certification</h3>
+                  <span class="certification-card__year">2024</span>
+                  <small>View certificate</small>
+                  <img class="certification-card__preview" src="./assets/cert1.png" alt="" />
+                </button>
+              </div>
+              <div class="certification-card__face certification-card__back">
+                <img src="./assets/cert1.png" alt="Cloud Consultant certificate" />
+              </div>
+            </div>
+          </article>
+          <article class="certification-card">
+            <div class="certification-card__inner">
+              <div class="certification-card__face certification-card__front">
+                <button class="certification-card__copy" type="button" aria-expanded="false">
+                  <p>NPTEL / IIT Kharagpur</p>
+                  <h3>Cloud Computing Certification</h3>
+                  <span class="certification-card__year">2024</span>
+                  <small>View certificate</small>
+                  <img class="certification-card__preview" src="./assets/cert2.png" alt="" />
+                </button>
+              </div>
+              <div class="certification-card__face certification-card__back">
+                <img src="./assets/cert2.png" alt="Cloud Computing and Distributed Systems certificate" />
+              </div>
+            </div>
+          </article>
+          <article class="certification-card">
+            <div class="certification-card__inner">
+              <div class="certification-card__face certification-card__front">
+                <button class="certification-card__copy" type="button" aria-expanded="false">
+                  <p>NPTEL / IIT Kharagpur</p>
+                  <h3>Cloud Computing and Distributed Systems Certification</h3>
+                  <span class="certification-card__year">2024</span>
+                  <small>View certificate</small>
+                  <img class="certification-card__preview" src="./assets/cert3.png" alt="" />
+                </button>
+              </div>
+              <div class="certification-card__face certification-card__back">
+                <img src="./assets/cert3.png" alt="Cloud Computing and Distributed Systems certificate" />
+              </div>
+            </div>
+          </article>
+          <article class="certification-card">
+            <div class="certification-card__inner">
+              <div class="certification-card__face certification-card__front">
+                <button class="certification-card__copy" type="button" aria-expanded="false">
+                  <p>OneRoadmap</p>
+                  <h3>AI Engineer</h3>
+                  <span class="certification-card__year">June 1, 2025</span>
+                  <small>View verification details</small>
+                  <img class="certification-card__preview" src="./assets/cert4.png" alt="" />
+                </button>
+              </div>
+              <div class="certification-card__face certification-card__back">
+                <img src="./assets/cert4.png" alt="OneRoadmap AI Engineer certificate" />
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section-grid animate-section">
+        <div class="contact-shell glossy-card">
+          <div class="section-heading">
+            <p class="section__text__p1">Contact</p>
+            <h2 class="section-title">If you're building something ambitious, I'd love to contribute.</h2>
+          </div>
+          <div class="contact-info-upper-container">
+            <a class="contact-info-container" href="mailto:gokulapriyan1979@gmail.com">
+              <span class="contact-label">Email</span>
+              <strong>gokulm.codes@gmail.com</strong>
+            </a>
+            <a class="contact-info-container" href="tel:+919360425065">
+              <span class="contact-label">Phone</span>
+              <strong>+91 93604 25065</strong>
+            </a>
+            <a class="contact-info-container" href="https://www.linkedin.com/in/gokul-m-77a850341/" target="_blank" rel="noreferrer">
+              <span class="contact-label">LinkedIn</span>
+              <strong>Linkedin-Profile</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2026 Gokul M. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="page.js"></script>
+  </body>
+</html>
