@@ -1,13 +1,20 @@
+
 pipeline {
     agent any
 
     environment {
         VERCEL_TOKEN = credentials('vercel-token')
-        VERCEL_ORG_ID = team_NZASLqlY7sz5XRZ0RZSxtI20
-        VERCEL_PROJECT_ID = prj_0nGIfJpAIZ8KzIVbGlGCOPQfdXgm
+        VERCEL_ORG_ID = 'team_NZASLqlY7sz5XRZ0RZSxtI20'
+        VERCEL_PROJECT_ID = 'prj_0nGIfJpAIZ8KzIVbGlGCOPQfdXgm'
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
         stage('Validate Portfolio') {
             steps {
                 bat '''
@@ -16,7 +23,7 @@ pipeline {
                     if not exist mediaqueries.css exit /b 1
                     if not exist page.js exit /b 1
                     if not exist assets exit /b 1
-                    echo Portfolio files validated successfully.
+                    echo Portfolio validation successful.
                 '''
             }
         }
@@ -24,7 +31,7 @@ pipeline {
         stage('Deploy to Vercel') {
             steps {
                 bat '''
-                    npx --yes vercel deploy --prod --yes --token=%VERCEL_TOKEN%
+                    npx --yes vercel deploy --prod --yes --project=%VERCEL_PROJECT_ID% --token=%VERCEL_TOKEN%
                 '''
             }
         }
@@ -32,10 +39,10 @@ pipeline {
 
     post {
         success {
-            echo 'Portfolio deployed successfully!'
+            echo 'Portfolio deployed successfully to Vercel!'
         }
         failure {
-            echo 'Deployment failed. Check the Console Output.'
+            echo 'Pipeline failed. Check the console output.'
         }
     }
 }
