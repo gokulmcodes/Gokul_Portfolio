@@ -1,3 +1,4 @@
+/* Large screens */
 @media screen and (min-width: 1440px) {
   :root {
     --container: min(1280px, calc(100% - 5rem));
@@ -12,9 +13,10 @@
   }
 }
 
-@media screen and (max-width: 1280px) {
+/* Laptops and smaller desktops */
+@media screen and (max-width: 1200px) {
   :root {
-    --container: min(1120px, calc(100% - 2rem));
+    --container: min(1080px, calc(100% - 2rem));
   }
 
   .title {
@@ -22,9 +24,9 @@
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1024px) {
   :root {
-    --container: min(100% - 1.75rem, 1040px);
+    --container: min(100% - 1.75rem, 960px);
   }
 
   .hero {
@@ -43,7 +45,7 @@
   }
 
   .projects-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .title,
@@ -61,18 +63,19 @@
     transform: translateY(-0.4rem);
   }
 
-  .featured-project {
-    transform: none;
+  .timeline-card {
+    gap: 1rem;
   }
 }
 
-@media screen and (min-width: 1101px) {
+@media screen and (min-width: 1025px) {
   .feature-card {
     align-self: start;
     align-content: start;
   }
 }
 
+/* Compact navigation and tablet layout */
 @media screen and (max-width: 860px) {
   #desktop-nav {
     display: none;
@@ -82,13 +85,18 @@
     display: flex;
   }
 
+  .work-status {
+    top: 6rem;
+    max-width: calc(100vw - 2rem);
+  }
+
   .theme-toggle {
-    right: 1rem;
-    top: 0.9rem;
+    top: 1.15rem;
+    right: 4.8rem;
   }
 
   main {
-    padding-top: 6.8rem;
+    padding-top: 9.25rem;
   }
 
   section {
@@ -97,19 +105,16 @@
 
   .hero__badge {
     position: static;
-    margin-top: 1rem;
     max-width: none;
+    margin-top: 1rem;
   }
 
   .nav-links {
     gap: 1rem;
   }
-
-  .timeline-card {
-    gap: 1rem;
-  }
 }
 
+/* Phones */
 @media screen and (max-width: 700px) {
   :root {
     --container: min(100% - 1rem, 1180px);
@@ -139,7 +144,7 @@
   .skill-panel,
   .timeline-card,
   .contact-shell {
-    padding: 1.3rem;
+    padding: 1.2rem;
   }
 
   .btn-container {
@@ -171,6 +176,12 @@
     --radius-sm: 14px;
   }
 
+  .work-status {
+    gap: 0.45rem;
+    padding: 0.48rem 0.7rem;
+    font-size: 0.72rem;
+  }
+
   .theme-toggle {
     min-width: 72px;
     padding-inline: 0.8rem;
@@ -192,10 +203,6 @@
 
   .menu-links {
     width: min(220px, calc(100vw - 1.2rem));
-  }
-
-  main {
-    padding-top: 6.3rem;
   }
 
   section {
@@ -263,7 +270,7 @@
   }
 
   .project-copy .btn-container {
-    margin-top: 1rem;
+    padding-top: 1rem;
   }
 
   .contact-info-container {
@@ -273,17 +280,11 @@
 
 @media screen and (max-width: 400px) {
   :root {
-    --container: calc(100% - 0.8rem);
-  }
-
-  #hamburger-nav {
-    margin-top: 0.6rem;
-    padding: 0.65rem 0.75rem;
+    --container: calc(100% - 1rem);
   }
 
   .theme-toggle {
-    top: 0.8rem;
-    right: 0.7rem;
+    right: 4.7rem;
     min-width: 66px;
     padding: 0.65rem 0.7rem;
   }
@@ -311,15 +312,13 @@
   }
 
   .timeline-card__meta strong,
-  .project-title {
-    font-size: 1.02rem;
-  }
-
+  .project-title,
   .certification-card__copy h3 {
     font-size: 1.02rem;
   }
 }
 
+/* Hide the custom pointer on touch devices and narrow screens */
 @media (hover: none) and (pointer: coarse), screen and (max-width: 768px) {
   .cursor-dot,
   .cursor-outline {
@@ -336,6 +335,7 @@
   #particles-js,
   .theme-toggle,
   .scroll-top,
+  .work-status,
   .cursor-dot,
   .cursor-outline,
   .loading-screen,
